@@ -1,0 +1,12 @@
+$setups_file -> file Read_CSV(read_csv.py)
+"bgr.capnp:Setup" -> path_to_capnp_struct Read_CSV()
+"runId" -> id_col Read_CSV()
+"1" -> send_ids Read_CSV()
+Read_CSV() out_sr -> attr_sr Read_file(read_file.py)
+
+"setup" -> to_attr Read_file()
+"1" -> skip_lines Read_file()
+$coords_file -> file Read_file()
+OUTPORT=Read_file.out_sr:out
+#Read_file() out_sr 
+
